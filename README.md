@@ -1,4 +1,4 @@
 # dart_counter
 
-Dart Counter of darts_ger 
+DartCounter of darts_ger 
 
