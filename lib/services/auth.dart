@@ -43,12 +43,19 @@ class AuthService {
   /// SignIn instagramm
   // TODO
 
+  /// SignIn facebook
+  // TODO
+
+  /// SignIn google
+  // TODO
+
+
   /// SignUp email & password
   Future signUpEmailAndPassword(String email, String password) async {
     try {
       AuthResult result = await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
       FirebaseUser user = result.user;
-      await DatabaseService(user.uid).updateUserData(email, password); // TODO dont safe pw in db
+      await DatabaseService(user.uid).updateUserData(email);
       return _userFromFireBaseUser(user);
     } catch(e) {
       print(e.toString());
