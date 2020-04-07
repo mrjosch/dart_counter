@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>452899776402-mvbl67qq3hja54of6hoivdeb6ppu0e1g.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.452899776402-mvbl67qq3hja54of6hoivdeb6ppu0e1g</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAQJAY3kLqZpYb3FoY8zL2uFn0idZpqcNI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>452899776402</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ger.darts.dartCounter</string>
+	<key>PROJECT_ID</key>
+	<string>dartcounter-91fe2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dartcounter-91fe2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:452899776402:ios:533dcc04d83111db89c34b</string>
+	<key>DATABASE_URL</key>
+	<string>https://dartcounter-91fe2.firebaseio.com</string>
+</dict>
+</plist>
