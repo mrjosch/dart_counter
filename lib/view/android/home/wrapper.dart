@@ -1,5 +1,5 @@
-import 'package:dart_counter/artefacts/Packet.dart';
-import 'package:dart_counter/artefacts/Snapshot.dart';
+import 'package:dart_counter/networking/artefacts/Packet.dart';
+import 'package:dart_counter/networking/artefacts/Snapshot.dart';
 import 'package:dart_counter/services/playing_offline.dart';
 import 'package:dart_counter/view/android/home/in_game.dart';
 import 'package:dart_counter/view/android/home/post_game.dart';

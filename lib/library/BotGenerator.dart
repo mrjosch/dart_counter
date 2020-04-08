@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:dart_counter/library/ThrowValidator.dart';
-import 'package:dart_counter/model/game/DartBot.dart';
-import 'package:dart_counter/model/game/Game.dart';
+import 'package:dart_counter/model/DartBot.dart';
+import 'package:dart_counter/model/Game.dart';
 
 class BotGenerator {
   static int getScore(DartBot bot) {

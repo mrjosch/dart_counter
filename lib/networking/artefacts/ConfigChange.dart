@@ -1,4 +1,4 @@
-import 'package:dart_counter/artefacts/Packet.dart';
+import 'package:dart_counter/networking/artefacts/Packet.dart';
 
 class ConfigChange extends Packet{
 

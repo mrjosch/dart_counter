@@ -1,15 +1,15 @@
 
 import 'dart:convert';
 
-import 'package:dart_counter/artefacts/ConfigChange.dart';
-import 'package:dart_counter/artefacts/Container.dart';
-import 'package:dart_counter/artefacts/GameJoin.dart';
-import 'package:dart_counter/artefacts/Packet.dart';
-import 'package:dart_counter/artefacts/PerformThrow.dart';
-import 'package:dart_counter/artefacts/ServerJoin.dart';
-import 'package:dart_counter/artefacts/Snapshot.dart';
-import 'package:dart_counter/model/game/Player.dart';
-import 'package:dart_counter/model/game/Throw.dart';
+import 'package:dart_counter/networking/artefacts/ConfigChange.dart';
+import 'package:dart_counter/networking/artefacts/Container.dart';
+import 'package:dart_counter/networking/artefacts/GameJoin.dart';
+import 'package:dart_counter/networking/artefacts/Packet.dart';
+import 'package:dart_counter/networking/artefacts/PerformThrow.dart';
+import 'package:dart_counter/networking/artefacts/ServerJoin.dart';
+import 'package:dart_counter/networking/artefacts/Snapshot.dart';
+import 'package:dart_counter/model/Player.dart';
+import 'package:dart_counter/model/Throw.dart';
 import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 

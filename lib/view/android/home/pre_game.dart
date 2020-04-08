@@ -1,8 +1,8 @@
 import 'dart:ui';
 
-import 'package:dart_counter/artefacts/Snapshot.dart';
-import 'package:dart_counter/model/game/DartBot.dart';
-import 'package:dart_counter/model/game/Player.dart';
+import 'package:dart_counter/networking/artefacts/Snapshot.dart';
+import 'package:dart_counter/model/DartBot.dart';
+import 'package:dart_counter/model/Player.dart';
 import 'package:dart_counter/services/auth.dart';
 import 'package:dart_counter/services/playing_offline.dart';
 import 'package:dart_counter/services/playing_online.dart';

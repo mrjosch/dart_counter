@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:dart_counter/model/User.dart';
+import 'package:dart_counter/sessioning/User.dart';
 import 'package:dart_counter/services/auth.dart';
 import 'package:dart_counter/services/playing_online.dart';
 import 'package:dart_counter/view/android/authenticate/wrapper.dart' as android;

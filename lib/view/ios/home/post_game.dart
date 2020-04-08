@@ -1,6 +1,6 @@
-import 'package:dart_counter/artefacts/Snapshot.dart';
-import 'package:dart_counter/model/game/Leg.dart';
-import 'package:dart_counter/model/game/Player.dart';
+import 'package:dart_counter/networking/artefacts/Snapshot.dart';
+import 'package:dart_counter/model/Leg.dart';
+import 'package:dart_counter/model/Player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart' show Colors;
 import 'package:swipedetector/swipedetector.dart';

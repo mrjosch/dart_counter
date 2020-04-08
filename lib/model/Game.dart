@@ -1,12 +1,13 @@
 
-import 'package:dart_counter/artefacts/Snapshot.dart';
+
 import 'package:dart_counter/library/BotGenerator.dart';
 import 'package:dart_counter/library/ThrowValidator.dart';
-import 'package:dart_counter/model/game/GameConfig.dart';
-import 'package:dart_counter/model/game/Leg.dart';
-import 'package:dart_counter/model/game/Player.dart';
-import 'package:dart_counter/model/game/Set.dart';
-import 'package:dart_counter/model/game/Throw.dart';
+import 'package:dart_counter/model/GameConfig.dart';
+import 'package:dart_counter/model/Leg.dart';
+import 'package:dart_counter/model/Player.dart';
+import 'package:dart_counter/model/Set.dart';
+import 'package:dart_counter/model/Throw.dart';
+import 'package:dart_counter/networking/artefacts/Snapshot.dart';
 import 'package:flutter/foundation.dart';
 
 import 'DartBot.dart';

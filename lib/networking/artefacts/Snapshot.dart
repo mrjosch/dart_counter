@@ -1,9 +1,9 @@
 
 
-import 'package:dart_counter/model/game/DartBot.dart';
-import 'package:dart_counter/model/game/GameConfig.dart';
-import 'package:dart_counter/model/game/Player.dart';
-import 'package:dart_counter/model/game/Set.dart';
+import 'package:dart_counter/model/DartBot.dart';
+import 'package:dart_counter/model/GameConfig.dart';
+import 'package:dart_counter/model/Player.dart';
+import 'package:dart_counter/model/Set.dart';
 
 import 'Packet.dart';
 

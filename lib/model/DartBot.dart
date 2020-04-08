@@ -1,4 +1,4 @@
-import 'package:dart_counter/model/game/Player.dart';
+import 'package:dart_counter/model/Player.dart';
 
 class DartBot extends Player {
   int targetAverage;

@@ -1,5 +1,5 @@
-import 'package:dart_counter/model/User.dart';
-import 'package:dart_counter/services/database.dart';
+import 'package:dart_counter/sessioning/User.dart';
+import 'package:dart_counter/services/database_online.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {

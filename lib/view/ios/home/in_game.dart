@@ -1,10 +1,10 @@
 import 'dart:ui';
 
-import 'package:dart_counter/artefacts/Snapshot.dart';
+import 'package:dart_counter/networking/artefacts/Snapshot.dart';
 import 'package:dart_counter/library/Finishes.dart';
 import 'package:dart_counter/library/ThrowValidator.dart';
-import 'package:dart_counter/model/game/Player.dart';
-import 'package:dart_counter/model/game/Throw.dart';
+import 'package:dart_counter/model/Player.dart';
+import 'package:dart_counter/model/Throw.dart';
 import 'package:dart_counter/services/playing_offline.dart';
 import 'package:dart_counter/services/playing_online.dart';
 import 'package:dart_counter/view/ios/home/double_dialog.dart';

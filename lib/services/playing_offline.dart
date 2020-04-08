@@ -1,8 +1,8 @@
-import 'package:dart_counter/artefacts/Snapshot.dart';
-import 'package:dart_counter/model/game/Game.dart';
-import 'package:dart_counter/model/game/GameConfig.dart';
-import 'package:dart_counter/model/game/Player.dart';
-import 'package:dart_counter/model/game/Throw.dart';
+import 'package:dart_counter/networking/artefacts/Snapshot.dart';
+import 'package:dart_counter/model/Game.dart';
+import 'package:dart_counter/model/GameConfig.dart';
+import 'package:dart_counter/model/Player.dart';
+import 'package:dart_counter/model/Throw.dart';
 
 class PlayingOfflineService {
 

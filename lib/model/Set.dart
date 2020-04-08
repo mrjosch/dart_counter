@@ -1,4 +1,4 @@
-import 'package:dart_counter/model/game/Leg.dart';
+import 'package:dart_counter/model/Leg.dart';
 import 'package:flutter/foundation.dart';
 
 class Set {

@@ -1,6 +1,6 @@
 
 
-import 'package:dart_counter/model/game/Throw.dart';
+import 'package:dart_counter/model/Throw.dart';
 
 import 'Packet.dart';
 

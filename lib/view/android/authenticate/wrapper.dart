@@ -1,5 +1,5 @@
-import 'package:dart_counter/artefacts/Packet.dart';
-import 'package:dart_counter/model/User.dart';
+import 'package:dart_counter/networking/artefacts/Packet.dart';
+import 'package:dart_counter/sessioning/User.dart';
 import 'package:dart_counter/services/playing_online.dart';
 import 'package:dart_counter/view/android/authenticate/home.dart';
 import 'package:dart_counter/view/android/authenticate/sign_in.dart';
