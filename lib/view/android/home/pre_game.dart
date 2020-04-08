@@ -7,10 +7,8 @@ import 'package:dart_counter/services/auth.dart';
 import 'package:dart_counter/services/playing_offline.dart';
 import 'package:dart_counter/services/playing_online.dart';
 import 'package:dart_counter/shared/ios/CupertinoButtonSmall.dart';
-import 'package:dart_counter/view/android/authenticate/wrapper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart' show Colors, Icons, Divider;
-import 'package:provider/provider.dart';
 
 class PreGameWidget extends StatefulWidget {
 
@@ -42,16 +40,12 @@ class _PreGameWidgetState extends State<PreGameWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final WrapperState state = Provider.of<WrapperState>(context);
-
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         leading: CupertinoButton(
             child: Icon(Icons.exit_to_app, color: Colors.black),
             onPressed: () async {
               await AuthService().signOut();
-              state.hideLoading();
-              print("signed out");
             }),
         middle: Text('DartCounter'),
       ),

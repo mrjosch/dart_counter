@@ -1,7 +1,6 @@
 import 'package:dart_counter/artefacts/Snapshot.dart';
 import 'package:dart_counter/model/game/Leg.dart';
 import 'package:dart_counter/model/game/Player.dart';
-import 'package:dart_counter/view/android/home/pre_game.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart' show Colors;
 import 'package:swipedetector/swipedetector.dart';

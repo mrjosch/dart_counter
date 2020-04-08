@@ -10,17 +10,16 @@ import 'package:dart_counter/artefacts/ServerJoin.dart';
 import 'package:dart_counter/artefacts/Snapshot.dart';
 import 'package:dart_counter/model/game/Player.dart';
 import 'package:dart_counter/model/game/Throw.dart';
-
 import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 class PlayingOnlineService {
 
-  final Client _client = Client.instance;
+  final Client _serverClient = Client.instance;
 
   /// connect to to playing service
   Future<void> connect() async {
-    await _client.connect();
+    await _serverClient.connect();
   }
 
   /// create Packet based on incoming data
@@ -37,38 +36,38 @@ class PlayingOnlineService {
 
   /// incoming packet stream
   Stream<Packet> get packets {
-    return _client.channel.stream.map(_packetFromWebsocket);
+    return _serverClient.channel.stream.map(_packetFromWebsocket);
   }
 
 
   void createGame() {
-    _client.send('createGame', null);
+    _serverClient.send('createGame', null);
   }
 
   void joinServer(String userId) {
-    _client.send('serverJoin', ServerJoin(userId));
+    _serverClient.send('serverJoin', ServerJoin(userId));
   }
 
   void joinGame(String gameId) {
-    _client.send('gameJoin', GameJoin(gameId));
-    //_client.send('startGame', null);
+    _serverClient.send('gameJoin', GameJoin(gameId));
+    //_serverClient.send('startGame', null);
   }
 
 
   void toggleMode() {
-    _client.send('configChange', ConfigChange('toggleMode', null));
+    _serverClient.send('configChange', ConfigChange('toggleMode', null));
   }
 
   void setSize(int size) {
-    _client.send('configChange', ConfigChange('setSize', size));
+    _serverClient.send('configChange', ConfigChange('setSize', size));
   }
 
   void toggleType() {
-    _client.send('configChange', ConfigChange('toggleType', null));
+    _serverClient.send('configChange', ConfigChange('toggleType', null));
   }
 
   void setStartingPoints(int startingPoints) {
-    _client.send('configChange', ConfigChange('setStartingPoints', startingPoints));
+    _serverClient.send('configChange', ConfigChange('setStartingPoints', startingPoints));
   }
 
   bool addPlayer(Player player) {
@@ -80,22 +79,20 @@ class PlayingOnlineService {
   }
 
   void startGame() {
-    _client.send('startGame', null);
+    _serverClient.send('startGame', null);
   }
 
   void performThrow(Throw t) {
-    _client.send('performThrow', PerformThrow(t));
+    _serverClient.send('performThrow', PerformThrow(t));
   }
 
   void undoThrow() {
-    _client.send('undoThrow', null);
+    _serverClient.send('undoThrow', null);
   }
 
 }
 
 class Client {
-
-  //WebSocket webSocket;
 
   WebSocketChannel channel;
 
@@ -122,4 +119,3 @@ class Client {
   }
 
 }
-

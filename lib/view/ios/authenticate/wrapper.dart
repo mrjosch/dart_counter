@@ -1,7 +1,6 @@
 import 'package:dart_counter/artefacts/Packet.dart';
 import 'package:dart_counter/model/User.dart';
 import 'package:dart_counter/services/playing_online.dart';
-import 'package:dart_counter/shared/loading.dart';
 import 'package:dart_counter/view/ios/authenticate/home.dart';
 import 'package:dart_counter/view/ios/authenticate/sign_in.dart';
 import 'package:dart_counter/view/ios/authenticate/sign_up.dart';
@@ -24,7 +23,7 @@ class WrapperState extends State<Wrapper> {
 
   final PageController _controller = new PageController(initialPage: 1, viewportFraction: 1.0);
 
-  bool loading = false;
+
   bool connectedToPlayingService = false;
   final packetProvider = StreamProvider<Packet>.value(value: PlayingOnlineService().packets);
 
@@ -35,7 +34,7 @@ class WrapperState extends State<Wrapper> {
     if(user == null) {
       return Provider<WrapperState>.value(
         value: this,
-        child: loading ? Loading(widget.primary, widget.secondary) : MaterialApp(
+        child: MaterialApp(
           home: Container(
               height: MediaQuery.of(context).size.height,
               child: PageView(
@@ -78,15 +77,4 @@ class WrapperState extends State<Wrapper> {
     );
   }
 
-  showLoading() {
-    setState(() {
-      loading = true;
-    });
-  }
-
-  hideLoading() {
-    setState(() {
-      loading = false;
-    });
-  }
 }

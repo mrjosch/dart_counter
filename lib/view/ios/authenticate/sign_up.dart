@@ -1,9 +1,8 @@
 import 'package:dart_counter/services/auth.dart';
 import 'package:dart_counter/shared/errorMessages.dart';
-import 'package:dart_counter/view/ios/authenticate/wrapper.dart';
+import 'package:dart_counter/shared/loading.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class SignUp extends StatefulWidget {
 
@@ -18,6 +17,8 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
 
+  bool loading = false;
+
   final _emailOrUsernameController = new TextEditingController();
   final _passwordController = new TextEditingController();
   final _confirmPasswordController = new TextEditingController();
@@ -26,9 +27,7 @@ class _SignUpState extends State<SignUp> {
 
   @override
   Widget build(BuildContext context) {
-    final WrapperState state = Provider.of<WrapperState>(context);
-
-    return Scaffold(
+    return loading ? Loading(widget.primary, widget.secondary) : Scaffold(
       body: new Container(
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
@@ -245,18 +244,18 @@ class _SignUpState extends State<SignUp> {
                         if(password == cofirmPassword) {
                           if(password.length > 5) {
                             if(RegExp('^[A-Za-z0-9]*\$').hasMatch(emailOrUsername)) {
-                              state.showLoading();
+                              setState(() => loading = true);
                               dynamic result = await AuthService().signUpEmailAndPassword('${emailOrUsername}@username.com', password);
                               if(result == null) {
                                 //setState(() => error = ErrorMessages.USERNAME_ALREADY_IN_USE); // TODO
-                                state.hideLoading();
+                                setState(() => loading = false);
                               }
                             } else if(EmailValidator.validate(emailOrUsername)) {
-                              state.showLoading();
+                              setState(() => loading = true);
                               dynamic result = AuthService().signUpEmailAndPassword(emailOrUsername, password);
                               if(result == null) {
                                 //setState(() => error = ErrorMessages.EMAIL_ALREADY_IN_USE); // TODO
-                                state.hideLoading();
+                                setState(() => loading = false);
                               }
                             } else {
                               if(emailOrUsername.contains('\@')) {

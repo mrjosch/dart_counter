@@ -1,9 +1,8 @@
 import 'package:dart_counter/services/auth.dart';
-import 'package:dart_counter/view/android/authenticate/wrapper.dart';
+import 'package:dart_counter/shared/loading.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icomoon_icons/flutter_icomoon_icons.dart';
-import 'package:provider/provider.dart';
 
 class SignIn extends StatefulWidget {
 
@@ -18,6 +17,8 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
 
+  bool loading;
+
   final emailOrUsernameController = new TextEditingController();
   final _passwordController = new TextEditingController();
 
@@ -25,9 +26,7 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
-    final WrapperState state = Provider.of<WrapperState>(context);
-
-    return new Container(
+    return loading ? Loading(widget.primary, widget.secondary) : new Container(
       height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
         color: widget.primary,
@@ -38,7 +37,7 @@ class _SignInState extends State<SignIn> {
               padding: EdgeInsets.all(120.0),
               child: Center(
                   child: ClipRRect(
-                      borderRadius: BorderRadius.circular(100), child: Image.asset('assets/profil_pic.png', width: 100, height: 100)
+                      borderRadius: BorderRadius.circular(100), child: Image.asset('assets/logo.jpg', width: 100, height: 100)
                   )
               )
           ),
@@ -188,17 +187,17 @@ class _SignInState extends State<SignIn> {
                       String password = _passwordController.text;
 
                       if(EmailValidator.validate(emailOrUsername)) {
-                        state.showLoading();
+                        setState(() => loading = true);
                         dynamic result = await AuthService().signInEmailAndPassword(emailOrUsername, password);
                         if(result == null) {
-                          state.hideLoading();
+                          setState(() => loading = false);
                           //setState(() => error = ErrorMessages.USERNAME_NOT_FOUND_OR_PASSWORD_WRONG); TODO
                         }
                       } else {
-                        state.showLoading();
+                        setState(() => loading = true);
                         dynamic result = await AuthService().signInEmailAndPassword('${emailOrUsername}@username.com', password);
                         if(result == null) {
-                          state.hideLoading();
+                          setState(() => loading = false);
                           //setState(() => error = ErrorMessages.USERNAME_NOT_FOUND_OR_PASSWORD_WRONG); TODO
                         }
                       }

@@ -20,19 +20,19 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     if(Platform.isIOS) {
       return StreamProvider<User>.value(
-        value: AuthService().user,
-        child: CupertinoApp(
-          debugShowCheckedModeBanner: true,
-          home: ios.Wrapper(Colors.white, Colors.grey[400]),
-        )
+          value: AuthService().user,
+          child: CupertinoApp(
+            debugShowCheckedModeBanner: true,
+            home: ios.Wrapper(Colors.white, Colors.grey[400]),
+          )
       );
     } else if(Platform.isAndroid) {
       return StreamProvider<User>.value(
-        value: AuthService().user,
-        child: MaterialApp(
-          debugShowCheckedModeBanner: true,
-          home: android.Wrapper(Colors.white, Colors.redAccent),
-        )
+          value: AuthService().user,
+          child: MaterialApp(
+            debugShowCheckedModeBanner: true,
+            home: android.Wrapper(Colors.white, Colors.grey[400]),
+          )
       );
     } else {
       return Center(
